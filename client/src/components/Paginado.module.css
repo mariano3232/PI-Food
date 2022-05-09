@@ -1,0 +1,13 @@
+.paginado{
+    position:absolute;
+    left:40em;
+    top:13em
+}
+.button{
+    height:3em ;
+    width:3em;
+    border:2px solid rgb(193, 193, 63);
+}
+.button:hover{
+    background-color: rgb(193, 193, 63);
+}

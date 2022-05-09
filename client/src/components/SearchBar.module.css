@@ -1,0 +1,21 @@
+.search{
+    position:absolute;
+    left:10px;
+    top:80px;
+    margin:1px;
+    width: 50em;
+    height: 2em;
+}
+.button{
+    position:absolute;
+    left:52em;
+    top:80px;
+    margin:1px;
+    width: 5em;
+    height: 2.5em;
+    background-color: white;
+    border: 3px solid rgb(193, 193, 63)
+}
+.button:hover{
+    background-color: rgb(193, 193, 63);
+}

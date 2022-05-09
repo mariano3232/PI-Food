@@ -1,0 +1,39 @@
+.container{
+    position:relative;
+    display:flex;
+    float:left;
+    background-color: rgb(72, 118, 83);
+    border:3px solid black;
+    border-radius: 1%;
+    margin:5px;
+    width:23em;
+    height:24em;
+}
+.space{
+    display: flex;
+    margin-top: 1em;
+}
+.title{
+    position:absolute;
+    font-size:70%;
+    float:top;
+    height: 10em;
+    color:rgb(193, 193, 63);
+    justify-content: center;
+}
+.title:hover{
+    color:yellow
+}
+.img{
+    position:absolute;
+    bottom: 4px;
+    left:25px
+}
+.diets{
+    display: flex;
+    justify-content: center;
+    color: black;
+    text-transform: capitalize;
+    margin: 10px;
+    margin-top: 90px;
+}

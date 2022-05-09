@@ -1,0 +1,96 @@
+.container{
+    background-color:rgb(72, 118, 83);
+    width: 45em;
+    height: 45em;
+    margin-top: 2em;
+    border: 5px solid rgb(193, 193, 63);
+    border-radius: 2%;
+}
+.new{
+    font-family: 'Times New Roman', Times, serif;
+    color:rgb(211, 211, 36) ;
+}
+.link{
+    font-size: x-large;
+    color: rgba(26, 25, 25, 0.688);
+    float:right;
+    margin-right: 6em;
+}
+.link:hover{
+    color:yellow;
+}
+.select{
+    display:inline;
+    width: 10em;
+    height: 3em;
+    background-color: white;
+    border:2px solid rgb(193, 193, 63);
+    border-radius: 5%;
+    margin: 2px;
+}
+.select:hover{
+    background-color:rgb(193, 193, 63) ;
+}
+.button{
+    margin:1px;
+    width: 10em;
+    height: 3em; 
+    border: 2px solid rgb(193, 193, 63)
+}
+.button:hover{
+    background-color: rgb(193, 193, 63);
+}
+.add{
+    margin:1px;
+    width: 10em;
+    height: 3em; 
+    border: 3px solid rgb(24, 24, 22);
+    background-color: rgb(85, 97, 23);
+}
+.add:hover{
+    background-color: yellow;
+}
+
+.input{
+    display:inline;
+    width: 10em;
+    height: 2em;
+    background-color: white;
+    border:2px solid rgb(193, 193, 63);
+    border-radius: 5%;
+    margin: 2px;
+}
+.step{
+    display:inline;
+    width: 40em;
+    height: 5em;
+    background-color: white;
+    border:2px solid rgb(193, 193, 63);
+    border-radius: 1%;
+    margin: 2px;
+}
+.summary{
+    display:inline;
+    width: 40em;
+    height: 5em;
+    background-color: white;
+    border:2px solid rgb(193, 193, 63);
+    border-radius: 1%;
+    margin: 2px;
+}
+.title{
+    display:inline;
+    width: 40em;
+    height: 2em;
+    background-color: white;
+    border:2px solid rgb(193, 193, 63);
+    border-radius: 1%;
+    margin: 2px;
+}
+.space{
+    display: flex;
+    margin-top: 1em;
+}
+.label{
+    font-size: large;
+}

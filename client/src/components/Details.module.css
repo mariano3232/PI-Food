@@ -1,0 +1,48 @@
+.container{
+    display: relative;
+    background-color:rgb(72, 118, 83);
+    width: 70em;
+}
+.title{
+    color:rgb(193, 193, 63);
+}
+.label{
+    font-size: 200%;
+    color: rgb(193, 193, 63);
+}
+.diet{
+    margin: 15px;
+    font-size: 130%;
+}
+.space{
+    display:flex;
+    margin-top: 1em;
+}
+.p{
+    display:flex;
+    margin:5px;
+    font-size: large;
+    color:#282827
+}
+.score{
+    display: flex;
+}
+.img{
+    display: block;
+    float:right;
+    margin-right: 10em;
+    margin-top: 4em;
+    border:5px solid rgb(193, 193, 63);
+    border-radius: 2%;
+}
+.text{
+    margin-bottom: 5em;
+    color:#1a1a19
+}
+.link{
+    font-size: larger;
+    color: #282827;
+}
+.link:hover{
+    color:yellow
+}

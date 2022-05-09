@@ -1,0 +1,63 @@
+html body {
+    background:url('../depositphotos_254396052-stock-photo-various-pasta-on-wooden-bowls.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    width:fit-content;
+    height: fit-content;
+}
+.title {
+    color:rgb(193, 193, 63);
+    font-family: 'Franklin Gothic Medium';
+    font-size:xx-large;
+    margin-left: 30px;
+    
+}
+.space{
+    display: flex;
+    margin-top: 1em;
+}
+.select{
+    display:inline;
+    width: 10em;
+    height: 3em;
+    background-color: white;
+    border:2px solid rgb(193, 193, 63);
+    border-radius: 5%;
+    margin: 2px;
+}
+.select:hover{
+    background-color:rgb(193, 193, 63) ;
+}
+.button{
+    position:absolute;
+    left:40empx;
+    top:13.9em;
+    margin:1px;
+    width: 10em;
+    height: 3em; 
+    border: 2px solid rgb(193, 193, 63)
+}
+.add{
+    position:absolute;
+    right: 10em;
+    top:5em;
+    margin:1px;
+    color: black;
+    font-size: large;
+}
+.add:hover{
+    color:yellow
+}
+.button:hover{
+    background-color: rgb(193, 193, 63);
+}
+
+.header{
+    position: relative;
+    display:flex;
+    width:72em;
+    height: 10em;
+    background-color: rgb(72, 118, 83);
+    border-radius: 4%;
+    border: 4px solid rgb(193, 193, 63);
+}
