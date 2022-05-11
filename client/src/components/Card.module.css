@@ -9,6 +9,9 @@
     width:23em;
     height:24em;
 }
+.container:hover{
+    background-color:rgb(74, 142, 90) ;
+}
 .space{
     display: flex;
     margin-top: 1em;
@@ -27,7 +30,8 @@
 .img{
     position:absolute;
     bottom: 4px;
-    left:25px
+    left:45px;
+    border: 2px solid rgb(40, 40, 37) ;
 }
 .diets{
     display: flex;

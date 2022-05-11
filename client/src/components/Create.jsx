@@ -3,29 +3,13 @@ import { useDispatch,useSelector } from "react-redux";
 import {Link} from "react-router-dom";
 import { getDiets,post } from "../actions";
 import styles from './Create.module.css'
-// function Control(input){
-//     var letters = /^[A-Za-z, ]+$/;
-//     let errors={};
-//     if (input.title.lenght===0){
-//         errors.title='Recipe title is requiered'
-//     }
-//     if (!input.title.match(letters)){
-//         errors.title='Title must contain letters only'
-//     }
-//     if (input.score<1||input.score>100){
-//         errors.score='The score should be a value between 1 and 100'
-//     }
-//     if (input.healthScore<1||input.healthScore>100){
-//         errors.healthScore='The healthScore should be a value between 1 and 100'
-//     }
-// }
 
 export default function Create(){
     const dispatch=useDispatch();
     const diets=useSelector(state=>state.Diets)
     var [input,setInput]=useState({
         title:'',
-        // image:'',
+        image:'',
         summary:'',
         score:'',
         healthScore:'',
@@ -72,11 +56,18 @@ export default function Create(){
         setStep('')
         console.log('input :',input)
     }
-    function HandleReset(e){
+    function HandleResetSteps(e){
         e.preventDefault()
         setInput({
             ...input,
             stepByStep:[]
+        })
+    }
+    function HandleResetDiets(e){
+        e.preventDefault();
+        setInput({
+            ...input,
+            diets:[]
         })
     }
     function HandleSubmit(e){
@@ -102,23 +93,24 @@ export default function Create(){
     return(
         <div className={styles.container}>
             <Link to ='/Home' className={styles.link}>Home</Link>
-            <h1 className={styles.new}>Add a new recipe beibi</h1>
+            <h1 className={styles.new}>Add a new recipe!!</h1>
             <form onSubmit={(e)=>HandleSubmit(e)}>
                 <label className={styles.label}>  Title: </label>
                 <input type="text" name='title' value={input.title} onChange={HandleChange} className={styles.title}/>
-                {/* <label >ImageUrl:</label>
-                <input type="url" name='image' value={input.image} onChange={HandleChange}/>
-                <label>dietTypes:</label> */}
+                <div className={styles.space}/>
+                <label className={styles.label}>ImageUrl :</label>
+                <input type="url" name='image' onChange={(e)=>HandleChange(e)} className={styles.title}/>
                 <div className={styles.space}/>
                 <label className={styles.label}>Diets:</label>
                 <select onChange={(e)=>HandleSelect(e)} className={styles.select}>
+                    <option disabled selected>Diets</option>
                     {
                         diets.map(e=>{
                            return <option key={e} id={e} value={e}>{e}</option>
                         })
                     }
                 </select>
-                <button onClick={()=>{input.diets=[]}} className={styles.button}>Reset diets</button>
+                <button onClick={(e)=>{HandleResetDiets(e)}} className={styles.button}>Reset diets</button>
                 <ul>
                     <li>
                         {input.diets.map(e=>
@@ -139,7 +131,7 @@ export default function Create(){
                 <textarea rows="2" cols="25" type="text" onChange={(e)=>HandleStep(e)} className={styles.step}/>
                 <div className={styles.space}/>
                 <button onClick={(e)=>HandleClick(e)}className={styles.button}>add step</button>
-                <button onClick={(e)=>{HandleReset(e)}} className={styles.button}>Reset steps</button>
+                <button onClick={(e)=>{HandleResetSteps(e)}} className={styles.button}>Reset steps</button>
                 {/* <ul><li>{input.stepByStep.map((e,index)=>'step '+(index+1)+': '+e +', ')}</li></ul> */}
                 <ul><li>{input.stepByStep.map((e,i)=>'Step '+(i+1)+' saved,' )}</li></ul>
                 <button type='submit' className={styles.add}>Add recipe</button>

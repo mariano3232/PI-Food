@@ -1,17 +1,19 @@
 .title{
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: rgb(46, 43, 43);
+    color: rgb(85, 67, 67);
 }
 
 .button{
-    width: 50em;
-    height: 50em;
+    width: 40em;
+    height: 35em;
     border-radius: 100%;
     background-color: rgb(193, 193, 63);
     font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 4em;
+    margin-top: 8em;
     
 }
 .button:hover{
-    background-color: rgb(123, 120, 120);
-    color: yellow;
+    background-color: rgb(74, 142, 90);
+    color: black;
 }

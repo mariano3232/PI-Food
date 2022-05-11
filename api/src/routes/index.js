@@ -31,14 +31,14 @@ const FoodApi=async()=>{
 
 const FoodDb=async ()=>{
    return await Recipe.findAll({
-           include:{                                   //trae toda la info de la base de datos Recipe
-               model:Diet,                        //incluyendo los nombres de las dietes de la otra tabla(Diet)
+           include:{                            
+               model:Diet,                   
                attributes:['name'],
-               through: {attributes:[]}    //no se que hace esta linea xd
+               through: {attributes:[]}   
            }
      })
 }
-const getFood=async()=>{     //concatenar Api y Db 
+const getFood=async()=>{    
     const api=await FoodApi();
     const db=await FoodDb();
     const allFood=api.concat(db)
@@ -48,7 +48,7 @@ const getFood=async()=>{     //concatenar Api y Db
 //rutas:
 
 
-router.get('/recipes',async(req,res)=>{         //home y busqueda por query
+router.get('/recipes',async(req,res)=>{      
     let query=req.query.name;
     let recipes=await getFood();
     let response=recipes;
@@ -65,7 +65,7 @@ router.get('/recipes',async(req,res)=>{         //home y busqueda por query
 })
 
 
-router.get('/recipes/:RecipeID',async(req,res)=>{       //para detalless
+router.get('/recipes/:RecipeID',async(req,res)=>{       
     let recipes= await getFood();
     let RecipeID=req.params.RecipeID;
     let response='Not Found ):'
@@ -89,7 +89,6 @@ router.get('/recipes/:RecipeID',async(req,res)=>{       //para detalless
     res.status(200).send(response)
 })
 
-//Faltan get /Types, el post y listo el Back =)
 
 router.get('/types',async (req,res)=>{
     let recipes=await getFood();
@@ -102,7 +101,6 @@ router.get('/types',async (req,res)=>{
             UniqueDiets.push(e)
         }
     })
-    console.log('UniqueDiets :',UniqueDiets)
     UniqueDiets.forEach(async (e)=>{
        if (e){
             await Diet.findOrCreate({where:{name:e}})
@@ -114,18 +112,18 @@ router.get('/types',async (req,res)=>{
 
 
 router.post('/recipe',async(req,res)=>{
-    const {title,summary,score,healthScore,stepByStep,diets}=req.body
+    const {title,image,summary,score,healthScore,stepByStep,diets}=req.body
 
     const RecipeData={
         title,
+        image,
         summary,
         score,
         healthScore,
         stepByStep,
     }
     const newRecipe=await Recipe.create(RecipeData)
-    const dietsDb=await Diet.findAll({where:{name:diets}})   //????por que anda esto (diets es un arreglo)
-
+    const dietsDb=await Diet.findAll({where:{name:diets}})
     newRecipe.addDiet(dietsDb)
     res.send('New recipe stored succesfully')
 })

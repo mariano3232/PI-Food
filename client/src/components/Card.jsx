@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from './Card.module.css';
+import img from '../catFood.jpg'
+
 
 export default function Card(p){
+    const catFood=img;
     return(
         <div className={styles.container}>
             <Link to={'/Home/'+p.id} className={styles.title}><h1>{p.title}</h1></Link>
@@ -11,7 +14,6 @@ export default function Card(p){
                 p.diets?.map(e=>{
                     return(
                         <span key={e} className={styles.diets}>{e}{" "}</span>
-                    // <p key={e} className={styles.diets}>{e}, </p>
                     )
                 })
             }
@@ -23,7 +25,7 @@ export default function Card(p){
                     )
                 })
             }
-            <Link to={'/Home/'+p.id}><img src={p.image} alt="Not Found" className={styles.img} /></Link>
+            <Link to={'/Home/'+p.id}><img src={p.image} alt='Not found' width= '270px' height='200px' className={styles.img}/></Link>
         </div>
     )
 }

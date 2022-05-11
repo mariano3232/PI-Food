@@ -21,6 +21,7 @@ export function getDiets(){
         })
     }
 }
+
 export function searchRecipe(search){
     return async (dispatch)=>{
         const results=await axios('http://localhost:3001/Recipes?name='+search)

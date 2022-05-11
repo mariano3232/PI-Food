@@ -7,20 +7,21 @@ import SearchBar from "./SearchBar";
 import Card from "./Card";
 import Paginado from "./Paginado";
 import styles from './Home.module.css'
-import stripTrailingSlashes from "tar/lib/strip-trailing-slashes";
+
 
 export default function Home(){
     const dispatch=useDispatch();
     const recipes=useSelector(state=>state.Recipes)
     const diets=useSelector((state)=>state.Diets)
     //indices para el paginado:
-    const [state,setState]=useState('') //solo sirve para que se renderizen
+    const [state,setState]=useState('') //solo sirve para renderizar
     const [currentPage,setCurrentPage]=useState(1)
     const [recipesPerPage,setRecipesPerPage]=useState(9)
     const lastRecipeIndex=currentPage*recipesPerPage;
     const firstRecipeIndex=lastRecipeIndex-recipesPerPage;
     const currentRecipes=recipes.slice(firstRecipeIndex,lastRecipeIndex)
-    const paginado=(pageNumber)=>{
+    console.log('currentRecipes :',currentRecipes)
+    const setCurrentP=(pageNumber)=>{
         setCurrentPage(pageNumber)
     }
 
@@ -81,10 +82,10 @@ export default function Home(){
                     }
                 </select>
                 <button onClick={(e)=>HandleClick(e)}  className={styles.button}>Reload recipes</button>
-                <Paginado recipesPerPage={recipesPerPage} allRecipes={recipes.length} paginado={paginado} />
+                <Paginado recipesPerPage={recipesPerPage} allRecipes={recipes.length} setCurrentP={setCurrentP} />
                 <div className={styles.space}/>
-                {
-                    currentRecipes.map(e=>{
+                {   
+                    currentRecipes?.map(e=>{
                         return <Card title={e.title} diets={e.diets} Diets={e.Diets} image={e.image} key={e.id} id={e.id}/>
                     })
                 }

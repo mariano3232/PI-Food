@@ -21,22 +21,24 @@ function Reducers(state=initialState,action){
                 Diets:action.payload
             }
         case 'SEARCH_RECIPE':
+            let results=action.payload;
+            if (results==='Recipe Not Found'){
+                results=[]
+            }
             return{
                 ...state,
-                Recipes:action.payload
+                Recipes:results
             }
         case 'ALPHABETICAL':
             var input=action.payload
             var sorted=''
             if (input=='A-Z'){
-                console.log('entra al if')
                 sorted=state.Recipes.sort((a,b)=>{
                     if (a.title>b.title){return 1}
                     if (a.title<b.title){return -1}
                 })
             }    
             if (input=='Z-A'){
-                console.log('entra al if')
                 sorted=state.Recipes.sort((a,b)=>{
                     if (a.title>b.title){return -1}
                     if (a.title<b.title){return 1}
@@ -50,9 +52,7 @@ function Reducers(state=initialState,action){
             }
         case 'SORT_RATING':
             input=action.payload;
-            console.log('input :',input)
             if (input==='asc'){
-                console.log('entra al if')
                 sorted=state.Recipes.sort((a,b)=>{
                     if (a.score<b.score){return -1}
                     if (a.score>b.score){return 1}
@@ -67,7 +67,6 @@ function Reducers(state=initialState,action){
                     })
                 if (input==""){sorted=state.Recipes}    
             }
-            console.log('sorted :',sorted)
             return{
                 ...state,
                 Recipes:sorted

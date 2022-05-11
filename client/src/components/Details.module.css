@@ -2,6 +2,8 @@
     display: relative;
     background-color:rgb(72, 118, 83);
     width: 70em;
+    border: 3px solid rgb(193, 193, 63);
+    margin: 10px;
 }
 .title{
     color:rgb(193, 193, 63);
