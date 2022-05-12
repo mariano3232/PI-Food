@@ -59,7 +59,7 @@ export function dietFilter(input){
 export function recipeDetails(id){
     return async (dispatch)=>{
         const Data=await axios('http://localhost:3001/Recipes/'+id)
-        console.log('Data :',Data)
+        console.log('Data :',Data.data)
         return dispatch({
             type:'DETAILS',
             payload:Data.data

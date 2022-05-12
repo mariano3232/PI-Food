@@ -65,7 +65,7 @@ router.get('/recipes',async(req,res)=>{
 })
 
 
-router.get('/recipes/:RecipeID',async(req,res)=>{       
+router.get('/recipes/:RecipeID',async(req,res)=>{    //details    
     let recipes= await getFood();
     let RecipeID=req.params.RecipeID;
     let response='Not Found ):'
